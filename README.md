@@ -6,7 +6,7 @@ How to run
 
 Or 
 
-Jar file is uploaded as well, you can simply run java file
+Jar file is uploaded under target folder, you can simply run jar file
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 To do
 1. City id is hard coded, and should get complete city id list
