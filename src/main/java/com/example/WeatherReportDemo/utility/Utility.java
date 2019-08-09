@@ -19,14 +19,13 @@ public class Utility {
 		return String.format("%.2f", temp_f - 273.15);
 	}
 	
-	// get local time based on timezone
-	// Timezone is based on second and difference from UTC
+	// get time based on timezone
 	public static String convertTimeBasedOnTimeZone(long timezone) {
 		ZonedDateTime now = ZonedDateTime.now(ZoneOffset.UTC).plusHours(timezone/3600);
         return now.format(FORMATTER);
 	}
 	
-	// calculate time based on provided value
+	// calculate time based on provided time and timezone
 	public static String covertTimeBasedOnTime(long time, long timezone) {
 		// value are provided as second and need to convert to mills
 		LocalDateTime date =
