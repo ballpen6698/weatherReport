@@ -1,12 +1,10 @@
 package com.example.WeatherReportDemo;
 
-import static org.mockito.Mockito.when;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.web.client.RestTemplate;
 
-import com.example.WeatherReportDemo.controller.ViewWeatherController;
 import com.example.WeatherReportDemo.entity.AllData;
 import com.example.WeatherReportDemo.entity.Main;
 import com.example.WeatherReportDemo.entity.Sys;
@@ -29,17 +27,11 @@ import org.mockito.MockitoAnnotations;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.Instant;
-import java.time.ZoneOffset;
-import java.time.ZonedDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.TimeZone;
 
@@ -66,25 +58,15 @@ public class WeatherReportDemoApplicationTests {
 	@Mock
 	private RestTemplate restTemplate;
 
-	// create dummy instance
-	@Mock
-	private WeatherService ws_mc;
-
 	// inject dummy instance
 	@InjectMocks
 	private WeatherService ws = new WeatherService();
 
-	// inject dummy instance
-	@InjectMocks
-	private ViewWeatherController viewWeatherController = new ViewWeatherController();
 
 	private AllData allData = new AllData();
 
 	@Before
 	public void init() {
-		// initializes fields annotated with Mockito annotations
-		MockitoAnnotations.initMocks(this);
-
 		// set up test data
 		allData = new AllData();
 		allData.setId(2643743);
@@ -115,11 +97,13 @@ public class WeatherReportDemoApplicationTests {
 
 	}
 
+	// behavior test of weather service class
 	@Test
 	public void TestWeatherService() {
 		Assert.assertEquals(allData, ws.getWeather("2643743"));
 	}
 
+	// mock test to invoke url
 	@Test
 	public void TestWeatherController() throws Exception {
 
