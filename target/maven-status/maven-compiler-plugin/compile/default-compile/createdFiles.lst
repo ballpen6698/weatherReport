@@ -1,0 +1,8 @@
+com\example\WeatherReportDemo\WeatherReportDemoApplication.class
+com\example\WeatherReportDemo\controller\ViewWeatherController.class
+com\example\WeatherReportDemo\entity\Weather.class
+com\example\WeatherReportDemo\utility\Utility.class
+com\example\WeatherReportDemo\entity\Main.class
+com\example\WeatherReportDemo\entity\Sys.class
+com\example\WeatherReportDemo\entity\AllData.class
+com\example\WeatherReportDemo\service\WeatherService.class
